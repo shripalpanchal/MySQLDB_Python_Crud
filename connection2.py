@@ -30,4 +30,10 @@ cursor = conn.cursor(query,parameters)
 
 for row in cursor.execute():
     print(row.BookId, row.Title, row.Author, row.Category)
-    
+
+
+insert_query = "INSET INTO PRODUCT(product_id,product_name,price) VALUSE (?, ?, ?)"
+
+parameters1 = (1,'Chair',3)
+
+cursor = conn.cursor(insert_query,parameters1)
